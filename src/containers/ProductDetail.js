@@ -1,18 +1,16 @@
-import React, {useState,useEffect} from 'react'
+import React, {useEffect} from 'react'
 import { useParams } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { selectedProduct, removeSelectedProduct } from '../redux/actions/productActions'
  const ProductDetail = () =>{
-     const [cart, setCart] = useState([])
+    
      const product= useSelector(state => state.product)
      const {image, title, price, category, description} = product;
      const {productId} = useParams()
      const dispatch = useDispatch()
      console.log(productId)
-     const addToCart = (product)=>{
-         setCart([...cart, product])
-     }
+     
      const fetchProductDetail = async() =>{
          const response = await axios
          .get(`https://fakestoreapi.com/products/${productId}`)
@@ -50,7 +48,7 @@ import { selectedProduct, removeSelectedProduct } from '../redux/actions/product
                              <div className="hidden content">
                                  <i className="shop icon"></i>
                              </div>
-                             <div className="visible content" onClick={() => addToCart(product)}>Add to Cart</div>
+                             <div className="visible content">Add to Cart</div>
                          </div>
                      </div>
                  </div>

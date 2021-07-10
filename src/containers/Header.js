@@ -8,7 +8,7 @@ const Header = ()=>{
             
             <h2>New Shop</h2>
         </div>
-        <Link to="/product/cart">
+        <Link to="/cart">
         <button>Go to Cart</button>
         </Link>
     </div>

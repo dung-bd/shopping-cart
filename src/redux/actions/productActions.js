@@ -17,3 +17,10 @@ export const removeSelectedProduct = ()=>{
         
     }
 }
+export const setCart = (cart)=>{
+    return{
+        type: ActionTypes.SET_CART,
+        payload: cart
+        
+    }
+}

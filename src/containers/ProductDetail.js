@@ -1,8 +1,9 @@
-import React, {useEffect} from 'react'
+import React, { useEffect} from 'react'
 import { useParams } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
-import { selectedProduct, removeSelectedProduct } from '../redux/actions/productActions'
+import { selectedProduct, removeSelectedProduct, setCart } from '../redux/actions/productActions'
+import {Link} from 'react-router-dom';
  const ProductDetail = () =>{
     
      const product= useSelector(state => state.product)
@@ -11,6 +12,10 @@ import { selectedProduct, removeSelectedProduct } from '../redux/actions/product
      const dispatch = useDispatch()
      console.log(productId)
      
+     const addToCart = (cart)=>{
+         dispatch(setCart(cart))
+
+     }
      const fetchProductDetail = async() =>{
          const response = await axios
          .get(`https://fakestoreapi.com/products/${productId}`)
@@ -29,7 +34,11 @@ import { selectedProduct, removeSelectedProduct } from '../redux/actions/product
          }
     },[productId])
      return(
+        
      <div className="ui grid container">
+         <Link to="/cart">
+        <button>Go to Cart</button>
+        </Link>
          {Object.keys(product).length === 0 ? (<div>...Loading</div>) : (<div className="ui placeholder segment">
              <div className="ui two column stackable center aligned grid">
                  <div className="ui vertical divider">AND</div>
@@ -44,16 +53,17 @@ import { selectedProduct, removeSelectedProduct } from '../redux/actions/product
                          </h2>
                          <h3 className="ui brown block header">{category}</h3>
                          <p>{description}</p>
-                         <div className="ui vertical animated button" tabIndex="0">
+                         <div className="ui vertical animated button" tabIndex="0" onClick={() => addToCart(product)} > 
                              <div className="hidden content">
                                  <i className="shop icon"></i>
                              </div>
                              <div className="visible content">Add to Cart</div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>)}
+                          </div>
+                          
+                      </div>
+                  </div>
+              </div>
+          </div>)}
          
          </div>
          )

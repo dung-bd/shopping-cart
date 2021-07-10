@@ -21,3 +21,11 @@ export const selectedProductReducer = (state={}, action) =>{
                 return state;
     }
 }
+export const cartReducer = (state = {}, action)=>{
+    switch(action.type){
+        case ActionTypes.SET_CART:
+            return {...state, ...action.payload};
+            default:
+                return state;
+    }
+}

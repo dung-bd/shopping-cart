@@ -2,12 +2,12 @@ import React, {useState,useEffect} from 'react'
 import { useParams } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
-import { selectedProduct, removeSelectedProduct, setCart } from '../redux/actions/productActions'
+import {removeSelectedProduct, setCart } from '../redux/actions/productActions'
 
  const ProductCart = () =>{
      const [quantity, setQuantity] = useState(1);
     const product= useSelector(state => state.cart)
-    const {image, title, price, category, description} = product;
+    const {image, title, price} = product;
     const {productId} = useParams()
     const dispatch = useDispatch()
     console.log(productId)
@@ -29,6 +29,9 @@ import { selectedProduct, removeSelectedProduct, setCart } from '../redux/action
             dispatch(removeSelectedProduct())
         }
    },[productId])
+   
+             
+             
     return(
        
     <div className="ui grid container">
@@ -53,6 +56,7 @@ import { selectedProduct, removeSelectedProduct, setCart } from '../redux/action
         )}
          
          </div>
+   
          )
  }
  export default ProductCart

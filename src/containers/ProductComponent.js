@@ -1,11 +1,13 @@
 import React,{useState} from 'react'
 import {Link} from 'react-router-dom';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { setCart } from '../redux/actions/productActions'
  const ProductComponent = () =>{
-    // const [cart, setCart] = useState([])
-    // const addToCart = (a)=>{
-    //     setCart([...cart, a])
-    // }
+    const addToCart = (cart)=>{
+        dispatch(setCart(cart))
+
+    }
+    const dispatch = useDispatch()
     const products = useSelector(state => state.allProducts.products)
     const renderList = products.map((product) =>{
         const {id, title, image, price, category} = product
@@ -25,10 +27,9 @@ import { useSelector } from 'react-redux'
                     <div className="meta">{category}</div>
                 </div>
             </div>
-            
         </div>
         </Link>
-        
+        <button onClick={() => addToCart(product)}>Add item</button>
          
         </div>
         

@@ -45,7 +45,7 @@ import {removeSelectedProduct, setCart } from '../redux/actions/productActions'
         Increase
       </button>
       
-      <button onClick={() => setQuantity(quantity - 1)}>
+      <button onClick={() => setQuantity(quantity - 1)} disabled={quantity <= 1}>
         Decrease
       </button>
       <h1>Total price: ${price * quantity}</h1>

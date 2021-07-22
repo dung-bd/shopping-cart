@@ -9,7 +9,7 @@ const Header = ()=>{
             <h2>New Shop</h2>
         </div>
         <Link to="/cart">
-        <button>Go to Cart</button>
+        <button className="btn1">Go to Cart</button>
         </Link>
     </div>
     )

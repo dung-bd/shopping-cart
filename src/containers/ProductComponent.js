@@ -29,7 +29,7 @@ import { setCart } from '../redux/actions/productActions'
             </div>
         </div>
         </Link>
-        <button onClick={() => addToCart(product)}>Add item</button>
+        <button className="btn1" onClick={() => addToCart(product)}>Add item</button>
          
         </div>
         

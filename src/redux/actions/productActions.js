@@ -24,3 +24,14 @@ export const setCart = (cart)=>{
         
     }
 }
+export function login(state){
+    return{
+        type: ActionTypes.LOG_IN,
+        payload: state
+    }
+}
+export function logout(state){
+    return{
+        type: ActionTypes.LOG_OUT
+    }
+}

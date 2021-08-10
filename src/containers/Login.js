@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "./Login.css"
 import { useDispatch } from 'react-redux'
 import {login} from "../redux/actions/productActions"
+
 const Login = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -20,14 +21,16 @@ const Login = () => {
         ))
     }
     return (
-        <div className="login" onSubmit={(e)=>handleSubmit(e)}>
-            <form className="login_form">
+        <div className="login" >
+            <form className="login_form" onSubmit={(e)=>handleSubmit(e)}>
                <h1>Login here </h1>
-               <input type="name" placeholder="Name" value={name} onChange={(e)=> setName(e.target.value)}/>
-               <input type="email" placeholder="Email"
+               <input type="name" placeholder="Name" value={name} required onChange={(e)=> setName(e.target.value)}/>
+               <input type="email" required placeholder="Email"
                value={email} onChange={(e)=> setEmail(e.target.value)}/>
-               <input type="password"placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
+               <input type="password"placeholder="Password" value={password} required onChange={(e)=> setPassword(e.target.value)}/>
+               
                <button type="submit" className="submit_btn">Submit</button>
+               
             </form>
         </div>
     )

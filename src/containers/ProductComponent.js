@@ -14,7 +14,7 @@ import { setCart } from '../redux/actions/productActions'
         return(
         
            
-        <div className="four wide column" key={id}>
+        <div className=" four wide column" key={id}>
             <Link to={`/product/${id}`}>
         < div className="ui link cards">
             <div className="card">

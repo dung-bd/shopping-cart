@@ -53,9 +53,7 @@
     margin-left: 90px;
     
     gap: 30px 10px;
-    @media screen  and(max-width:740px){
-      margin-left:60px;
-    }
+    
   }
   
   
@@ -142,5 +140,9 @@
     
     }
   }
-  
+  @media screen  and(max-width:740px){
+    .ui.grid.containers{
+      margin-left:60px;
+    }
+  }
   

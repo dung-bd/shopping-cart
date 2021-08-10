@@ -47,13 +47,14 @@
       margin-left: 30px;
   }
   
-  .ui.grid.container {
+  .ui.grid.containers {
     margin-top: 45px;
-    @media screen  and(max-width:900px){
-      display:grid;
-     
-    }
+    
+    margin-left: 90px;
+    
+    gap: 30px 10px;
   }
+  
   
   .ui.grid > .row {
     background: #fff;
@@ -131,4 +132,12 @@
       overflow: hidden;
       display: inline-block;
     }
+    .ui.grid.container >.four.wide.column{
+    
+      display: grid;
+    grid-template-columns: 33% 33% 33%;
+    
+    }
   }
+  
+  

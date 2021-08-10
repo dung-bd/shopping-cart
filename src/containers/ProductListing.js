@@ -18,7 +18,7 @@ import ProductComponent from './ProductComponent'
      },[])
      console.log("Products: ", products)
      return(
-     <div className="ui grid container">
+     <div className="ui grid containers">
          <ProductComponent />
          </div>
          )

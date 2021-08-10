@@ -7,6 +7,7 @@ import { setCart } from '../redux/actions/productActions'
         dispatch(setCart(cart))
 
     }
+    
     const dispatch = useDispatch()
     const products = useSelector(state => state.allProducts.products)
     const renderList = products.map((product) =>{
@@ -14,7 +15,7 @@ import { setCart } from '../redux/actions/productActions'
         return(
         
            
-        <div className=" four wide column" key={id}>
+        <div className=" four wide columns" key={id}>
             <Link to={`/product/${id}`}>
         < div className="ui link cards">
             <div className="card">

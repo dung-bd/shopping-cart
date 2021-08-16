@@ -38,7 +38,7 @@ import {removeSelectedProduct, setCart } from '../redux/actions/productActions'
         
         {Object.keys(product).length === 0 ? (<div>...Loading</div>) : (
             <div>
-                <h1>{title}- Price: ${price}</h1> 
+                <h1 className="title">{title}- Price: ${price}</h1> 
                 <img className="b" src={image}/>
                 <h1>Quantity: {quantity}</h1>
                 <button onClick={() => setQuantity(quantity + 1)}>

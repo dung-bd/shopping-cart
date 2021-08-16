@@ -8,6 +8,7 @@ const Header1 = ()=>{
     const user = useSelector(selectUser)
     const dispatch = useDispatch();
     const [name, setName] = useState(user.name)
+    const product= useSelector(state => state.cart)
   const handleLogout = (e) =>{
       e.preventDefault();
       dispatch(logout())
@@ -20,7 +21,10 @@ const Header1 = ()=>{
             <h2>1 Product Shop</h2>
         </div>
         <Link to="/cart">
-        <button className="btn1">Go to Cart</button>
+        <button className="btn1">Go to Cart
+        <i class="fas fa-shopping-cart"></i>
+       
+        </button>
         </Link>
         <div>
                 <span className="user_name">{name}</span>
